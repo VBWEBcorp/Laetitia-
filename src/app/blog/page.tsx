@@ -8,12 +8,15 @@ import BlogPageContent from './blog-page-content'
 export const revalidate = 3600
 
 export async function generateMetadata(): Promise<Metadata> {
+  const defaultTitle = 'Inspirations & Partages'
+  const defaultDescription = 'Retrouvez mes réflexions sur la danse intuitive, le tantra, le coaching et le chemin vers l\'épanouissement personnel.'
+
   try {
     await connectDB()
     const settings = await BlogSettings.findOne().lean() as any
 
-    const title = settings?.title || 'Blog'
-    const description = settings?.description || 'Découvrez nos articles, conseils et actualités.'
+    const title = settings?.title || defaultTitle
+    const description = settings?.description || defaultDescription
 
     return {
       title,
@@ -38,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     }
   } catch {
-    return { title: 'Blog' }
+    return { title: defaultTitle, description: defaultDescription }
   }
 }
 
@@ -57,8 +60,8 @@ export default async function BlogPage() {
     jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: settings?.title || 'Blog',
-      description: settings?.description || 'Nos dernières actualités',
+      name: settings?.title || 'Inspirations & Partages',
+      description: settings?.description || 'Réflexions sur la danse intuitive, le tantra et le coaching.',
       url: `${siteConfig.url}/blog`,
       publisher: {
         '@type': 'Organization',

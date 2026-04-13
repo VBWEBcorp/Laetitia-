@@ -3,17 +3,25 @@ import { connectDB } from '@/lib/db'
 import { BlogSettings } from '@/models/Blog'
 import { verifyAuth } from '@/lib/auth'
 
+const defaultSettings = {
+  enabled: true,
+  title: 'Inspirations & Partages',
+  eyebrow: 'Blog',
+  description: 'Retrouvez mes réflexions sur la danse intuitive, le tantra, le coaching et le chemin vers l\'épanouissement personnel.',
+  categories: ['Danse Intuitive', 'Tantra', 'Coaching', 'Bien-être'],
+}
+
 export async function GET() {
   try {
     await connectDB()
     const settings = await BlogSettings.findOne()
     if (!settings) {
-      return NextResponse.json({ enabled: false, title: 'Nos dernières actualités', eyebrow: 'Blog', description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.' })
+      return NextResponse.json(defaultSettings)
     }
     return NextResponse.json(settings)
   } catch (error) {
     console.error('Blog settings error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(defaultSettings)
   }
 }
 

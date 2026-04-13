@@ -4,7 +4,7 @@ import { ContactContent } from './contact-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Contactez-nous pour discuter de votre projet. Devis gratuit, réponse rapide.'
+  'Contactez Laetitia Sandoz pour un premier échange bienveillant. Danse intuitive, tantra, coaching et méditation.'
 
 export const metadata: Metadata = {
   title: 'Contact',

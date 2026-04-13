@@ -14,54 +14,69 @@ export async function POST(request: NextRequest) {
     await connectDB()
     const results: string[] = []
 
-    // ─── Gallery: 4 example photos ───
+    // ─── Gallery: 6 photos univers bien-être ───
     const existingImages = await GalleryImage.countDocuments()
     if (existingImages === 0) {
       const galleryImages = [
         {
-          title: 'Refonte site e-commerce',
-          description: 'Redesign complet d\'une boutique en ligne avec une expérience utilisateur optimisée et un tunnel de conversion performant.',
-          imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-          category: 'Web Design',
+          title: 'Connexion à la nature',
+          description: 'Se reconnecter à la terre, sentir l\'énergie de la nature et retrouver l\'harmonie intérieure.',
+          imageUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+          category: 'Nature',
           order: 1,
           active: true,
         },
         {
-          title: 'Application mobile fitness',
-          description: 'Conception et développement d\'une application de suivi sportif avec tableau de bord personnalisé.',
-          imageUrl: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&q=80',
-          category: 'Application',
+          title: 'Méditation et pleine conscience',
+          description: 'Un moment de calme pour se recentrer, respirer et être pleinement présente.',
+          imageUrl: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80',
+          category: 'Méditation',
           order: 2,
           active: true,
         },
         {
-          title: 'Identité visuelle restaurant',
-          description: 'Création d\'une identité de marque complète : logo, charte graphique et supports de communication.',
-          imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80',
-          category: 'Branding',
+          title: 'Mouvement et liberté',
+          description: 'La danse intuitive, un espace de liberté où le corps s\'exprime sans jugement.',
+          imageUrl: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80',
+          category: 'Danse',
           order: 3,
           active: true,
         },
         {
-          title: 'Dashboard analytique',
-          description: 'Interface de visualisation de données en temps réel pour une startup SaaS B2B.',
-          imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
-          category: 'Web Design',
+          title: 'Pieds dans le sable',
+          description: 'Marcher pieds nus, sentir le sable chaud et l\'eau sur la peau. Un retour à l\'essentiel.',
+          imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80',
+          category: 'Nature',
           order: 4,
+          active: true,
+        },
+        {
+          title: 'Yoga et équilibre',
+          description: 'Trouver son équilibre intérieur à travers le mouvement et la respiration consciente.',
+          imageUrl: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80',
+          category: 'Bien-être',
+          order: 5,
+          active: true,
+        },
+        {
+          title: 'Lumière intérieure',
+          description: 'Chaque être porte en lui une lumière. Mon accompagnement vous aide à la révéler.',
+          imageUrl: 'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?w=800&q=80',
+          category: 'Inspiration',
+          order: 6,
           active: true,
         },
       ]
 
       await GalleryImage.insertMany(galleryImages)
-      results.push('4 images galerie créées')
+      results.push('6 images galerie créées')
 
-      // Update gallery settings
       let gallerySettings = await GallerySettings.findOne()
       if (!gallerySettings) {
         await GallerySettings.create({
           enabled: true,
-          title: 'Nos réalisations',
-          description: 'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.',
+          title: 'Mon univers en images',
+          description: 'Découvrez mon univers à travers des photos inspirantes. Nature, danse, connexion à soi et moments de pleine conscience.',
           eyebrow: 'Galerie',
         })
       } else {
@@ -73,57 +88,70 @@ export async function POST(request: NextRequest) {
       results.push('Galerie déjà peuplée, ignorée')
     }
 
-    // ─── Blog: 2 example articles + categories ───
+    // ─── Blog: 3 articles bien-être + catégories ───
     const existingPosts = await BlogPost.countDocuments()
     if (existingPosts === 0) {
       const blogPosts = [
         {
-          title: '5 tendances web design à suivre en 2026',
-          slug: '5-tendances-web-design-2026',
-          excerpt: 'Le web design évolue constamment. Découvrez les tendances incontournables de cette année pour créer des sites modernes, accessibles et performants.',
-          content: `<h2>1. Le design immersif en 3D</h2><p>Les expériences web en trois dimensions ne sont plus réservées aux grandes marques. Grâce aux avancées de WebGL et des bibliothèques comme Three.js, de plus en plus de sites intègrent des éléments 3D interactifs pour captiver leurs visiteurs.</p><h2>2. Le minimalisme fonctionnel</h2><p>Moins, c'est plus. En 2026, la tendance est aux interfaces épurées qui vont droit au but. Les espaces blancs sont utilisés de manière stratégique pour guider l'œil et mettre en valeur le contenu essentiel.</p><h2>3. Les micro-interactions</h2><p>Les petites animations au survol, au clic ou au scroll enrichissent l'expérience utilisateur sans alourdir la page. Elles apportent du feedback visuel et rendent la navigation plus intuitive et agréable.</p><h2>4. L'accessibilité comme standard</h2><p>L'accessibilité n'est plus une option. Les normes WCAG 2.2 sont désormais un prérequis, et les designers intègrent dès la conception des contrastes suffisants, une navigation clavier optimisée et des alternatives textuelles.</p><h2>5. Le dark mode natif</h2><p>Le mode sombre n'est plus un gadget : c'est une attente des utilisateurs. Les sites modernes proposent un basculement fluide entre thème clair et sombre, respectant les préférences système de chaque visiteur.</p>`,
-          coverImage: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80',
-          category: 'Web Design',
-          tags: ['design', 'tendances', 'UX', 'accessibilité'],
-          author: 'L\'équipe',
+          title: 'Coaching et tantra : vers une vie épanouie',
+          slug: 'coaching-et-tantra-vers-une-vie-epanouie',
+          excerpt: 'Découvrez comment l\'alliance du coaching et du tantra peut transformer votre quotidien et vous guider vers une vie plus épanouie.',
+          content: '<h2>Le coaching et le tantra : deux approches complémentaires</h2><p>Le coaching personnalisé et les pratiques tantriques partagent un objectif commun : vous aider à vous reconnecter à votre être profond et à vivre une vie plus épanouie. Le coaching vous apporte la clarté mentale et les outils concrets pour avancer, tandis que le tantra vous reconnecte à votre corps et à vos sensations.</p><h2>S\'autoriser à jouir de la vie</h2><p>L\'important n\'est pas de tout comprendre, mais de s\'autoriser à vivre pleinement. C\'est un chemin de découverte de soi, fait de petits pas et de grandes révélations. Chaque séance est une invitation à explorer ce qui vous fait vibrer.</p><h2>Un accompagnement sur 3 mois</h2><p>Mon programme d\'accompagnement de 3 mois, avec 2 séances par mois, vous permet de prendre ce temps pour vous. Ensemble, nous explorons vos blocages, vos désirs profonds et les chemins vers une vie orgasmique — une vie où chaque instant est vécu avec présence et joie.</p>',
+          coverImage: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
+          category: 'Tantra',
+          tags: ['tantra', 'coaching', 'épanouissement', 'bien-être'],
+          author: 'Laetitia Sandoz',
           published: true,
           publishedAt: new Date('2026-03-15'),
-          metaTitle: '5 tendances web design incontournables en 2026',
-          metaDescription: 'Découvrez les 5 grandes tendances du web design en 2026 : 3D immersif, minimalisme, micro-interactions, accessibilité et dark mode.',
+          metaTitle: 'Coaching et tantra : vers une vie épanouie - Jouir de sa propre vie',
+          metaDescription: 'Découvrez comment l\'alliance du coaching et du tantra peut vous guider vers une vie plus épanouie et connectée.',
         },
         {
-          title: 'Comment améliorer le référencement de votre site',
-          slug: 'ameliorer-referencement-site',
-          excerpt: 'Le SEO est un levier essentiel pour attirer du trafic qualifié. Voici nos conseils pratiques pour optimiser votre visibilité sur les moteurs de recherche.',
-          content: `<h2>Optimisez vos balises meta</h2><p>Chaque page de votre site doit avoir un titre unique (balise title) et une description pertinente (meta description). Ces éléments sont les premiers éléments que vos visiteurs voient dans les résultats de recherche, soignez-les.</p><h2>Créez du contenu de qualité</h2><p>Google privilégie les contenus utiles, originaux et bien structurés. Publiez régulièrement des articles de blog qui répondent aux questions de votre audience. Utilisez des titres hiérarchisés (H2, H3) pour organiser votre texte.</p><h2>Améliorez la vitesse de chargement</h2><p>Un site lent fait fuir les visiteurs et pénalise votre classement. Optimisez vos images (format WebP, compression), activez la mise en cache et utilisez un hébergement performant. Visez un score supérieur à 90 sur Google PageSpeed.</p><h2>Pensez mobile-first</h2><p>Plus de 60% du trafic web provient des mobiles. Votre site doit être parfaitement responsive et offrir une navigation fluide sur smartphone. Google indexe désormais en priorité la version mobile de votre site.</p><h2>Travaillez vos liens</h2><p>Les liens internes aident Google à comprendre la structure de votre site. Les liens externes (backlinks) provenant de sites de confiance renforcent votre autorité. Développez une stratégie de netlinking cohérente et progressive.</p>`,
-          coverImage: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80',
-          category: 'SEO',
-          tags: ['seo', 'référencement', 'marketing', 'performance'],
-          author: 'L\'équipe',
+          title: 'Danse intuitive : libérez votre énergie créative',
+          slug: 'danse-intuitive-liberez-votre-energie-creative',
+          excerpt: 'La danse intuitive n\'est pas une question de technique. C\'est un outil puissant pour se reconnecter à son corps et libérer ses émotions.',
+          content: '<h2>Qu\'est-ce que la danse intuitive ?</h2><p>La danse intuitive, c\'est laisser le corps s\'exprimer librement, sans chorégraphie ni jugement. L\'important n\'est pas de bien danser, mais que la danse vous fasse du bien. Que vos mouvements vous libèrent de vos émotions, que vous puissiez exprimer à travers la danse vos différentes émotions.</p><h2>La vie est une danse</h2><p>Chaque émotion a son mouvement. La joie, la tristesse, la colère, la tendresse — toutes peuvent s\'exprimer à travers le corps. En dansant, vous apprenez à accueillir ce qui est là, sans le refouler ni le contrôler.</p><h2>Pour qui est la danse intuitive ?</h2><p>Pour tout le monde. Vous n\'avez besoin d\'aucune expérience en danse. Mon rôle est de créer un espace sûr et bienveillant où vous pouvez vous laisser aller, lâcher le mental et écouter votre corps.</p>',
+          coverImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80',
+          category: 'Danse Intuitive',
+          tags: ['danse', 'intuition', 'créativité', 'mouvement'],
+          author: 'Laetitia Sandoz',
           published: true,
           publishedAt: new Date('2026-03-28'),
-          metaTitle: 'Guide pratique : améliorer le référencement de votre site web',
-          metaDescription: 'Conseils SEO concrets pour optimiser votre site : balises meta, contenu de qualité, vitesse, mobile-first et stratégie de liens.',
+          metaTitle: 'Danse intuitive : libérez votre énergie créative - Jouir de sa propre vie',
+          metaDescription: 'La danse intuitive pour se reconnecter à son corps, libérer ses émotions et exprimer sa créativité profonde.',
+        },
+        {
+          title: 'Inspiration quotidienne : textes et photos révélateurs',
+          slug: 'inspiration-quotidienne-textes-et-photos-revelateurs',
+          excerpt: 'Des mots et des images pour nourrir votre chemin intérieur. Comment la photothérapie et l\'écriture peuvent vous aider à vous voir autrement.',
+          content: '<h2>Le pouvoir des mots et des images</h2><p>Nous vivons dans un monde d\'images, mais prenons-nous vraiment le temps de nous regarder ? La photothérapie est un outil puissant de découverte de soi. Se voir à travers l\'objectif, c\'est se voir autrement — célébrer sa beauté intérieure et extérieure.</p><h2>L\'écriture comme miroir de l\'âme</h2><p>Écrire, c\'est mettre des mots sur ce qui habite en nous. C\'est donner forme à nos ressentis, nos rêves, nos peurs. Dans mon accompagnement, j\'utilise l\'écriture intuitive comme un outil de connaissance de soi.</p><h2>Nourrir son chemin chaque jour</h2><p>L\'épanouissement personnel n\'est pas un événement ponctuel, c\'est un chemin quotidien. Chaque jour offre l\'occasion de se choisir, de s\'écouter et de s\'autoriser à vivre pleinement.</p>',
+          coverImage: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80',
+          category: 'Bien-être',
+          tags: ['inspiration', 'photothérapie', 'écriture', 'développement personnel'],
+          author: 'Laetitia Sandoz',
+          published: true,
+          publishedAt: new Date('2026-04-05'),
+          metaTitle: 'Inspiration quotidienne : textes et photos révélateurs - Jouir de sa propre vie',
+          metaDescription: 'Photothérapie et écriture intuitive pour nourrir votre chemin intérieur et vous voir autrement.',
         },
       ]
 
       await BlogPost.insertMany(blogPosts)
-      results.push('2 articles blog créés')
+      results.push('3 articles blog créés')
 
-      // Update blog settings with categories
       let blogSettings = await BlogSettings.findOne()
       if (!blogSettings) {
         await BlogSettings.create({
           enabled: true,
-          title: 'Nos dernières actualités',
-          description: 'Retrouvez nos conseils, nos projets récents et les tendances du secteur.',
+          title: 'Inspirations & Partages',
+          description: 'Retrouvez mes réflexions sur la danse intuitive, le tantra, le coaching et le chemin vers l\'épanouissement personnel.',
           eyebrow: 'Blog',
-          categories: ['Web Design', 'SEO', 'Conseils'],
+          categories: ['Danse Intuitive', 'Tantra', 'Coaching', 'Bien-être'],
         })
       } else {
         blogSettings.enabled = true
         if (!blogSettings.categories || blogSettings.categories.length === 0) {
-          blogSettings.categories = ['Web Design', 'SEO', 'Conseils']
+          blogSettings.categories = ['Danse Intuitive', 'Tantra', 'Coaching', 'Bien-être']
         }
         await blogSettings.save()
       }

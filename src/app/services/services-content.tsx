@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import {
-  BarChart3, Code, Globe, Megaphone, Palette, Search, ShieldCheck, Smartphone,
+  Music, Flame, HeartHandshake, Sparkles, Camera, HandHeart, Flower2, Sun,
 } from 'lucide-react'
 
 import { CtaSection } from '@/components/sections/cta-section'
@@ -11,24 +11,24 @@ import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/ca
 import { useContent } from '@/hooks/use-content'
 
 const ease = [0.22, 1, 0.36, 1] as const
-const defaultIcons = [Globe, Smartphone, Search, Palette, Megaphone, Code, ShieldCheck, BarChart3]
+const defaultIcons = [Music, Flame, HeartHandshake, Sparkles, Camera, HandHeart, Flower2, Sun]
 
 const defaults = {
   hero: {
     eyebrow: 'Services',
-    title: "Tout ce qu'il faut pour réussir en ligne",
-    description: "Des prestations complètes, de la conception à l'accompagnement continu, adaptées à toutes les tailles d'entreprise.",
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1920&q=80',
+    title: 'Un accompagnement pour chaque étape de votre chemin',
+    description: 'Des pratiques variées et complémentaires pour vous accompagner vers l\'épanouissement personnel et la reconnexion à votre être profond.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1920&q=80',
   },
   services: [
-    { title: 'Création de site vitrine', description: 'Un site moderne, rapide et responsive qui présente clairement votre activité et inspire confiance à vos visiteurs.' },
-    { title: 'Application web', description: 'Outils métier, plateformes de réservation, espaces clients : des applications pensées pour simplifier votre quotidien.' },
-    { title: 'Référencement naturel (SEO)', description: 'Optimisation technique, contenu stratégique et suivi de positionnement pour gagner en visibilité sur Google.' },
-    { title: 'Identité visuelle', description: 'Logo, charte graphique, supports de communication : une image cohérente qui vous ressemble.' },
-    { title: 'Communication digitale', description: 'Stratégie de contenu, réseaux sociaux et campagnes pour développer votre audience en ligne.' },
-    { title: 'Développement sur mesure', description: 'Intégrations, automatisations, API : des solutions techniques taillées pour vos besoins spécifiques.' },
-    { title: 'Maintenance & sécurité', description: 'Mises à jour, sauvegardes, monitoring et corrections pour un site toujours performant et sécurisé.' },
-    { title: 'Analyse & reporting', description: 'Tableaux de bord clairs pour suivre vos performances, comprendre vos visiteurs et ajuster votre stratégie.' },
+    { title: 'Danse Intuitive', description: 'Laissez-vous guider par le mouvement spontané de votre corps pour libérer les émotions et retrouver l\'harmonie intérieure. L\'important n\'est pas de bien danser, mais que la danse vous fasse du bien.' },
+    { title: 'Tantra', description: 'Explorez la connexion profonde entre le corps et l\'esprit à travers des pratiques millénaires de pleine conscience et de sensualité. Un chemin vers la présence et l\'éveil des sens.' },
+    { title: 'Coaching personnalisé', description: 'Un accompagnement sur mesure pour surmonter les obstacles, identifier ce qui vous fait vibrer et épanouir votre potentiel authentique vers une vie orgasmique et jouissive.' },
+    { title: 'Méditation guidée', description: 'Plongez dans un état de calme intérieur et de clarté mentale à travers des pratiques méditatives guidées pour une harmonie totale entre corps et esprit.' },
+    { title: 'Photothérapie', description: 'Utilisez l\'image comme miroir de votre beauté intérieure. La photothérapie permet de se voir autrement et de célébrer qui vous êtes vraiment.' },
+    { title: 'Massage énergétique', description: 'Un toucher bienveillant qui libère les tensions, rééquilibre les énergies et vous reconnecte à votre corps en profondeur.' },
+    { title: 'Accompagnement 3 mois', description: 'Un programme complet de 3 mois avec 2 séances par mois pour prendre le chemin d\'une vie épanouie. Apprendre à voir ce qui vous fait vibrer et jouir de la vie.' },
+    { title: 'Séances découverte', description: 'Une première rencontre pour découvrir les pratiques, poser vos intentions et commencer votre chemin vers vous-même en toute bienveillance.' },
   ],
 }
 

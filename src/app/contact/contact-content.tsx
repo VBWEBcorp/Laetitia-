@@ -16,9 +16,9 @@ const ease = [0.22, 1, 0.36, 1] as const
 const defaults = {
   hero: {
     eyebrow: 'Contact',
-    title: 'Parlons de votre projet',
-    description: 'Remplissez le formulaire ci-dessous ou contactez-nous directement. Nous répondons sous 24h.',
-    image: 'https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80',
+    title: 'Commençons ce chemin ensemble',
+    description: 'Envoyez-moi un message pour un premier échange bienveillant et sans engagement. Je vous répondrai dans les plus brefs délais.',
+    image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1920&q=80',
   },
   info: {
     phone: siteConfig.phone,
@@ -90,11 +90,11 @@ export function ContactContent() {
                         id="message"
                         name="message"
                         rows={5}
-                        placeholder="Décrivez votre projet en quelques mots..."
+                        placeholder="Parlez-moi de vous et de ce que vous recherchez..."
                         className="w-full rounded-xl border border-input bg-transparent px-3 py-2.5 text-sm leading-relaxed text-foreground transition-colors placeholder:text-muted-foreground focus-visible:border-ring focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
                       />
                     </div>
-                    <Button type="submit" size="lg" className="w-full">Envoyer le message</Button>
+                    <Button type="submit" size="lg" className="w-full">Envoyer mon message</Button>
                   </form>
                 </CardContent>
               </Card>

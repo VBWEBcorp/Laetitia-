@@ -10,11 +10,11 @@ import { useContent } from '@/hooks/use-content'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Notre histoire',
-  title: 'Une approche humaine, des résultats concrets',
-  paragraph1: 'Depuis nos débuts, nous croyons qu\'un bon site commence par une bonne écoute. Nous prenons le temps de comprendre votre métier, vos clients et vos objectifs avant de concevoir quoi que ce soit.',
-  paragraph2: 'Le résultat : des projets qui vous ressemblent, qui parlent à votre audience, et qui travaillent pour vous 24h/24.',
-  image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+  eyebrow: 'À propos de moi',
+  title: 'Laetitia Sandoz, un parcours atypique vers l\'accompagnement',
+  paragraph1: 'Je m\'appelle Laetitia Sandoz. Après des années en industrie où l\'ennui était devenu mon quotidien, j\'ai décidé de créer mon entreprise et de m\'autoriser à jouir de cette vie. Après des années de thérapie, j\'accompagne désormais les êtres sur ce chemin de faire ces premiers pas vers soi, vers qui l\'on est profondément.',
+  paragraph2: 'À travers des pratiques telles que la danse intuitive, la photothérapie, le massage énergétique, le tantra et le coaching, j\'offre un espace sûr pour explorer, guérir et se connecter profondément avec son être intérieur.',
+  image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
 }
 
 export function StorySection() {
@@ -36,7 +36,7 @@ export function StorySection() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border/80 bg-muted/40 shadow-[var(--shadow-md)] ring-1 ring-foreground/5">
               <img
                 src={story.image}
-                alt="Équipe au travail"
+                alt="Laetitia Sandoz - Accompagnement bien-être"
                 className="size-full object-cover"
                 loading="lazy"
                 width={800}
@@ -66,7 +66,7 @@ export function StorySection() {
             </p>
             <Button variant="outline" className="group" asChild>
               <Link href="/a-propos">
-                Lire plus
+                En savoir plus
                 <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </Link>
             </Button>

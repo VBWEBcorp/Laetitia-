@@ -14,14 +14,14 @@ const INTERVAL = 5000
 
 const defaults = {
   eyebrow: 'Bienvenue',
-  title: 'Votre partenaire pour réussir en ligne',
-  description: 'Nous accompagnons les entreprises avec des solutions sur mesure, pensées pour durer. Présence digitale, performance et clarté.',
-  button1: 'Prendre contact',
-  button2: 'Découvrir nos services',
+  title: 'Jouir de sa propre vie',
+  description: 'Découvrez l\'inspiration à travers la danse intuitive, le tantra et le coaching. Plongez dans un chemin d\'épanouissement personnel et de découverte de soi.',
+  button1: 'Me contacter',
+  button2: 'Découvrir mes services',
   images: [
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80',
-    'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=1920&q=80',
+    'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1920&q=80',
   ],
 }
 

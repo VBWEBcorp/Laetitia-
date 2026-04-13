@@ -8,17 +8,17 @@ import {
 } from '@/components/seo/json-ld'
 
 const description =
-  'Création de site, SEO, identité visuelle, développement sur mesure : découvrez nos services pour développer votre activité en ligne.'
+  'Danse intuitive, tantra, coaching, méditation, photothérapie et massage énergétique : découvrez les accompagnements proposés par Laetitia Sandoz pour votre épanouissement personnel.'
 
 const services = [
-  { title: 'Création de site vitrine', desc: 'Un site moderne, rapide et responsive qui présente clairement votre activité et inspire confiance à vos visiteurs.' },
-  { title: 'Application web', desc: 'Outils métier, plateformes de réservation, espaces clients : des applications pensées pour simplifier votre quotidien.' },
-  { title: 'Référencement naturel (SEO)', desc: 'Optimisation technique, contenu stratégique et suivi de positionnement pour gagner en visibilité sur Google.' },
-  { title: 'Identité visuelle', desc: 'Logo, charte graphique, supports de communication : une image cohérente qui vous ressemble.' },
-  { title: 'Communication digitale', desc: 'Stratégie de contenu, réseaux sociaux et campagnes pour développer votre audience en ligne.' },
-  { title: 'Développement sur mesure', desc: 'Intégrations, automatisations, API : des solutions techniques taillées pour vos besoins spécifiques.' },
-  { title: 'Maintenance & sécurité', desc: 'Mises à jour, sauvegardes, monitoring et corrections pour un site toujours performant et sécurisé.' },
-  { title: 'Analyse & reporting', desc: 'Tableaux de bord clairs pour suivre vos performances, comprendre vos visiteurs et ajuster votre stratégie.' },
+  { title: 'Danse Intuitive', desc: 'Laissez-vous guider par le mouvement spontané de votre corps pour libérer les émotions et retrouver l\'harmonie intérieure.' },
+  { title: 'Tantra', desc: 'Explorez la connexion profonde entre le corps et l\'esprit à travers des pratiques millénaires de pleine conscience.' },
+  { title: 'Coaching personnalisé', desc: 'Un accompagnement sur mesure pour identifier ce qui vous fait vibrer et épanouir votre potentiel authentique.' },
+  { title: 'Méditation guidée', desc: 'Plongez dans un état de calme intérieur et de clarté mentale pour une harmonie totale.' },
+  { title: 'Photothérapie', desc: 'Utilisez l\'image comme miroir de votre beauté intérieure et célébrez qui vous êtes vraiment.' },
+  { title: 'Massage énergétique', desc: 'Un toucher bienveillant qui libère les tensions et rééquilibre les énergies.' },
+  { title: 'Accompagnement 3 mois', desc: 'Un programme complet avec 2 séances par mois pour prendre le chemin d\'une vie épanouie.' },
+  { title: 'Séances découverte', desc: 'Une première rencontre pour découvrir les pratiques et poser vos intentions.' },
 ]
 
 export const metadata: Metadata = {

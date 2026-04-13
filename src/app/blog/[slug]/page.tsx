@@ -71,45 +71,47 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 export default async function BlogPostPage({ params }: { params: Params }) {
   const { slug } = await params
 
-  // Server-side check: if post doesn't exist or isn't published, 404
+  // Server-side: try to get post from DB for JSON-LD, but always render the client component
+  let jsonLd = null
   try {
     await connectDB()
     const post = await BlogPost.findOne({ slug, published: true }).lean() as any
 
-    if (!post) notFound()
-
-    // Render JSON-LD server-side for structured data
-    const jsonLd = {
-      '@context': 'https://schema.org',
-      '@type': 'BlogPosting',
-      headline: post.metaTitle || post.title,
-      description: post.metaDescription || post.excerpt,
-      image: post.coverImage || undefined,
-      datePublished: post.publishedAt?.toISOString(),
-      dateModified: post.updatedAt?.toISOString(),
-      author: post.author ? { '@type': 'Person', name: post.author } : undefined,
-      publisher: {
-        '@type': 'Organization',
-        name: siteConfig.name,
-        url: siteConfig.url,
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `${siteConfig.url}/blog/${post.slug}`,
-      },
-      keywords: post.tags?.join(', '),
+    if (post) {
+      jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.metaTitle || post.title,
+        description: post.metaDescription || post.excerpt,
+        image: post.coverImage || undefined,
+        datePublished: post.publishedAt?.toISOString(),
+        dateModified: post.updatedAt?.toISOString(),
+        author: post.author ? { '@type': 'Person', name: post.author } : undefined,
+        publisher: {
+          '@type': 'Organization',
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${siteConfig.url}/blog/${post.slug}`,
+        },
+        keywords: post.tags?.join(', '),
+      }
     }
+  } catch {
+    // DB not available — client component will fetch from API with demo fallback
+  }
 
-    return (
-      <>
+  return (
+    <>
+      {jsonLd && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <BlogPostContent slug={slug} />
-      </>
-    )
-  } catch {
-    notFound()
-  }
+      )}
+      <BlogPostContent slug={slug} />
+    </>
+  )
 }

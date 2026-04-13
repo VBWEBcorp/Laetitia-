@@ -3,6 +3,13 @@ import { connectDB } from '@/lib/db'
 import { GallerySettings } from '@/models/Gallery'
 import { verifyAuth } from '@/lib/auth'
 
+const defaultSettings = {
+  enabled: true,
+  title: 'Mon univers en images',
+  eyebrow: 'Galerie',
+  description: 'Découvrez mon univers à travers des photos inspirantes. Nature, danse, connexion à soi et moments de pleine conscience.',
+}
+
 // GET gallery settings (public)
 export async function GET() {
   try {
@@ -10,13 +17,13 @@ export async function GET() {
     const settings = await GallerySettings.findOne()
 
     if (!settings) {
-      return NextResponse.json({ enabled: false, title: 'Nos réalisations', eyebrow: 'Galerie', description: 'Découvrez nos projets récents et laissez-vous inspirer par notre savoir-faire.' })
+      return NextResponse.json(defaultSettings)
     }
 
     return NextResponse.json(settings)
   } catch (error) {
     console.error('Gallery settings error:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json(defaultSettings)
   }
 }
 

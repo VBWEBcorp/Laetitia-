@@ -4,7 +4,7 @@ import { AboutContent } from './about-content'
 import { breadcrumbJsonLd, webPageJsonLd } from '@/components/seo/json-ld'
 
 const description =
-  'Découvrez notre histoire, nos valeurs et notre équipe. Nous accompagnons les entreprises dans leur développement digital.'
+  'Découvrez le parcours de Laetitia Sandoz, accompagnatrice en danse intuitive, tantra, coaching et méditation. Un chemin atypique vers l\'épanouissement personnel.'
 
 export const metadata: Metadata = {
   title: 'À propos',

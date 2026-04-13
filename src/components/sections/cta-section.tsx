@@ -10,28 +10,28 @@ import { useContent } from '@/hooks/use-content'
 const ease = [0.22, 1, 0.36, 1] as const
 
 const defaults = {
-  eyebrow: 'Prêt à démarrer ?',
-  title: 'Parlons de votre projet',
-  description: 'Un échange simple et sans engagement pour comprendre vos besoins et vous proposer la meilleure approche.',
-  button: 'Demander un devis gratuit',
+  eyebrow: 'Prête à vous choisir ?',
+  title: 'Commençons ce chemin ensemble',
+  description: 'Un échange simple et bienveillant pour découvrir comment je peux vous accompagner vers votre épanouissement personnel.',
+  button: 'Prendre rendez-vous',
 }
 
 const col1Images = [
-  'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1531973576160-7125cd663d86?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1545389336-cf090694435e?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1528715471579-d1bcf0ba5e83?w=400&h=500&fit=crop&q=80',
 ]
 
 const col2Images = [
-  'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=500&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1474418397713-7ede21d49118?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=500&fit=crop&q=80',
 ]
 
 function ScrollColumn({ images, direction, speed }: { images: string[]; direction: 'up' | 'down'; speed: number }) {

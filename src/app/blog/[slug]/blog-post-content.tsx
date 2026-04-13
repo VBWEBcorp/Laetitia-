@@ -172,9 +172,9 @@ export default function BlogPostContent({ slug }: { slug: string }) {
 
           {/* CTA bottom */}
           <div className="border-t border-border/60 py-12 text-center space-y-4">
-            <p className="text-lg font-semibold text-foreground">Cet article vous a plu ?</p>
+            <p className="text-lg font-semibold text-foreground">Cet article vous a inspirée ?</p>
             <p className="text-sm text-muted-foreground">
-              Découvrez nos autres articles ou contactez-nous pour discuter de votre projet.
+              Découvrez mes autres articles ou contactez-moi pour commencer votre chemin.
             </p>
             <div className="flex items-center justify-center gap-3 pt-2">
               <Link
@@ -187,7 +187,7 @@ export default function BlogPostContent({ slug }: { slug: string }) {
                 href="/contact"
                 className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90 transition-colors"
               >
-                Nous contacter
+                Me contacter
               </Link>
             </div>
           </div>

@@ -6,22 +6,20 @@ import { SectionTitle } from '@/components/ui/section-title'
 import { useContent } from '@/hooks/use-content'
 
 const defaultTestimonials = [
-  { name: 'Marie D.', company: 'Boulangerie Le Fournil', text: "Depuis le nouveau site, je reçois 3 fois plus d'appels. Les clients nous trouvent enfin sur Google.", stars: 5 },
-  { name: 'Thomas L.', company: 'Cabinet Conseil TLR', text: 'Un travail soigné, un site clair et professionnel. Mes prospects comprennent immédiatement ce que je propose.', stars: 5 },
-  { name: 'Camille B.', company: 'Atelier Camille', text: "Le site reflète parfaitement l'univers de ma marque. J'ai gagné en crédibilité auprès de mes clients.", stars: 5 },
-  { name: 'Laurent M.', company: 'LM Rénovation', text: 'En trois mois, mon chiffre a augmenté de 40 %. Le site et le SEO font vraiment la différence.', stars: 5 },
-  { name: 'Nadia K.', company: 'Agence NovaTour', text: "Un accompagnement au top, des délais respectés et un résultat qui dépasse mes attentes.", stars: 5 },
-  { name: 'Sophie R.', company: 'Studio Pilates Zen', text: "L'équipe a su capter l'ambiance de mon studio. Les réservations ont décollé.", stars: 5 },
-  { name: 'Pierre V.', company: 'Transports Vallée', text: "Un investissement rentabilisé en quelques semaines. Des contacts qualifiés chaque jour.", stars: 5 },
-  { name: 'Julie A.', company: "Les Jardins d'Alice", text: "Ils ont transformé notre présence en ligne. Le site est magnifique et nos ventes ont triplé.", stars: 5 },
-  { name: 'Franck G.', company: 'Studio FG', text: "Design épuré, navigation fluide, exactement ce que je voulais pour présenter mes projets.", stars: 4 },
-  { name: 'Émilie T.', company: 'Clinique Vétérinaire du Parc', text: "Nos clients trouvent toutes les infos facilement. La prise de rendez-vous a changé notre quotidien.", stars: 5 },
+  { name: 'Caroline M.', company: 'Accompagnement 3 mois', text: "Les séances de danse intuitive avec Laetitia m'ont permis de libérer des émotions que je portais depuis des années. Une transformation profonde.", stars: 5 },
+  { name: 'Isabelle R.', company: 'Coaching individuel', text: "Laetitia crée un espace bienveillant où l'on se sent en totale sécurité pour explorer et se découvrir.", stars: 5 },
+  { name: 'Sophie L.', company: 'Danse intuitive', text: "Je ne savais pas danser, mais ce n'est pas le but. Le mouvement m'a reconnectée à mon corps et mes émotions.", stars: 5 },
+  { name: 'Nathalie B.', company: 'Accompagnement 3 mois', text: "Un parcours qui a changé ma vie. J'ai appris à m'autoriser à vivre pleinement et à écouter mes besoins.", stars: 5 },
+  { name: 'Aurélie D.', company: 'Méditation guidée', text: "Les méditations avec Laetitia m'apportent un calme profond. Je me sens enfin alignée avec moi-même.", stars: 5 },
+  { name: 'Marie-Claire P.', company: 'Tantra', text: "Une approche douce et respectueuse qui m'a permis de me reconnecter à ma sensualité et à mon énergie.", stars: 5 },
+  { name: 'Valérie T.', company: 'Coaching individuel', text: "Laetitia a un don pour vous guider vers votre vérité intérieure. Son parcours atypique est sa plus grande force.", stars: 5 },
+  { name: 'Estelle G.', company: 'Danse intuitive', text: "Chaque séance est une libération. La danse est devenue mon outil pour traverser les émotions du quotidien.", stars: 5 },
 ]
 
 const defaults = {
   eyebrow: 'Témoignages',
-  title: 'Ils nous font confiance',
-  description: 'Des entreprises de tous horizons qui ont gagné en visibilité et en crédibilité.',
+  title: 'Elles ont osé se choisir',
+  description: 'Des femmes qui ont choisi de prendre ce temps pour elles et de se reconnecter à leur être profond.',
   testimonials: defaultTestimonials,
 }
 

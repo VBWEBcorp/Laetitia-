@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Globe, Palette, Search, ShieldCheck } from 'lucide-react'
+import { ArrowRight, Music, Flame, HeartHandshake, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 
 import { SectionTitle } from '@/components/ui/section-title'
@@ -9,15 +9,15 @@ import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useContent } from '@/hooks/use-content'
 
-const iconMap: Record<string, any> = { Globe, Search, Palette, ShieldCheck }
+const iconMap: Record<string, any> = { Music, Flame, HeartHandshake, Sparkles }
 const defaultServices = [
-  { title: 'Création de site web', desc: 'Sites vitrines modernes, responsive et optimisés pour convertir vos visiteurs en clients.' },
-  { title: 'Référencement SEO', desc: 'Stratégie de contenu et optimisation technique pour apparaître en première page Google.' },
-  { title: 'Identité visuelle', desc: 'Logo, charte graphique et supports cohérents qui reflètent votre image de marque.' },
-  { title: 'Maintenance & support', desc: 'Mises à jour, sécurité et accompagnement continu pour garder votre site performant.' },
+  { title: 'Danse Intuitive', desc: 'Laissez-vous guider par le mouvement spontané de votre corps pour libérer les émotions et retrouver l\'harmonie intérieure.' },
+  { title: 'Tantra', desc: 'Explorez la connexion profonde entre le corps et l\'esprit à travers des pratiques millénaires de pleine conscience et de sensualité.' },
+  { title: 'Coaching', desc: 'Recevez un accompagnement personnalisé pour surmonter les obstacles, atteindre vos objectifs et épanouir votre potentiel authentique.' },
+  { title: 'Méditation', desc: 'Plongez dans un état de calme intérieur et de clarté mentale à travers des pratiques méditatives guidées pour une harmonie totale.' },
 ]
 
-const defaultIcons = [Globe, Search, Palette, ShieldCheck]
+const defaultIcons = [Music, Flame, HeartHandshake, Sparkles]
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -33,9 +33,9 @@ export function ServicesPreview() {
     <section className="border-b border-border/60">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <SectionTitle
-          eyebrow="Nos services"
-          title="Des solutions adaptées à votre activité"
-          description="Quel que soit votre secteur, nous vous aidons à développer votre présence et à atteindre vos objectifs."
+          eyebrow="Mes services"
+          title="Un accompagnement adapté à votre chemin"
+          description="Des pratiques variées pour vous accompagner vers l'épanouissement personnel et la découverte de soi."
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {services.map((s: any, i: number) => {
@@ -64,7 +64,7 @@ export function ServicesPreview() {
         <div className="mt-10 text-center">
           <Button variant="outline" className="group" asChild>
             <Link href="/services">
-              Voir tous nos services
+              Voir tous mes services
               <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
             </Link>
           </Button>
