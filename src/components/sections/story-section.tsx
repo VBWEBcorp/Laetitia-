@@ -14,7 +14,7 @@ const defaults = {
   title: 'Laetitia Sandoz, un parcours atypique vers l\'accompagnement',
   paragraph1: 'Je m\'appelle Laetitia Sandoz. Après des années en industrie où l\'ennui était devenu mon quotidien, j\'ai décidé de créer mon entreprise et de m\'autoriser à jouir de cette vie. Après des années de thérapie, j\'accompagne désormais les êtres sur ce chemin de faire ces premiers pas vers soi, vers qui l\'on est profondément.',
   paragraph2: 'À travers des pratiques telles que la danse intuitive, la photothérapie, le massage énergétique, le tantra et le coaching, j\'offre un espace sûr pour explorer, guérir et se connecter profondément avec son être intérieur.',
-  image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80',
+  image: '/images/laetitia.png',
 }
 
 export function StorySection() {
