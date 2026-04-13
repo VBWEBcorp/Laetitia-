@@ -39,7 +39,7 @@ export function ServicesPreview() {
         />
         <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {services.map((s: any, i: number) => {
-            const Icon = defaultIcons[i] ?? Globe
+            const Icon = defaultIcons[i] ?? Sparkles
             return (
               <motion.div
                 key={s.title || i}
